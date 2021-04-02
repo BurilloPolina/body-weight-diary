@@ -1,0 +1,58 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "617f52b4884b516fec331475df28367f",
+    "entities": [
+      {
+        "tableName": "measurement",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `weight` REAL NOT NULL, `dateOfMeasurement` TEXT NOT NULL, `difference` REAL NOT NULL, `indexWeight` REAL NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weight",
+            "columnName": "weight",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateOfMeasurement",
+            "columnName": "dateOfMeasurement",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "difference",
+            "columnName": "difference",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "indexWeight",
+            "columnName": "indexWeight",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '617f52b4884b516fec331475df28367f')"
+    ]
+  }
+}
